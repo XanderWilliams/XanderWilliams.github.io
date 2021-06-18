@@ -32,12 +32,8 @@ var init = function (window) {
 
 
         // TODO 3 / 8 : Call the drawCircle() function 
-        drawCircle()
-        drawCircle()
-        drawCircle()
-        drawCircle()
-        drawCircle()
-        drawCircle()
+        for (var i = 0; i < myArray.length; i++) {
+            var eachValue = myArray[i];
 
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
@@ -60,10 +56,10 @@ var init = function (window) {
             
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
             game.checkCirclePosition(myArray[0]  );
-            game.checkCirclePosition( myArray[0]  );
-            game.checkCirclePosition( myArray[0] );
-            game.checkCirclePosition( myArray[0] );
-            game.checkCirclePosition( myArray[0]  );
+            game.checkCirclePosition( myArray[1]  );
+            game.checkCirclePosition( myArray[2] );
+            game.checkCirclePosition( myArray[3] );
+            game.checkCirclePosition( myArray[4]  );
 
             // TODO 9 : Iterate over the array
            
@@ -83,9 +79,15 @@ var init = function (window) {
             }
             
             // TODO 7 : YOUR CODE STARTS HERE //////////////////////
-            
+            if ( circle.x < 0 ) {
+                circle.x = 20;
+            }
+            if ( circle.y > canvas.height ) {
+                circle.y = 50;
 
-
+                if ( circle.y < canvas.height ) {
+                    circle.x = 40;
+                }
             // YOUR TODO 7 CODE ENDS HERE //////////////////////////
         }
         
